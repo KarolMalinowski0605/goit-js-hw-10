@@ -3,8 +3,10 @@
 import axios from 'axios';
 
 
+
 axios.defaults.headers.common['x-api-key'] = "live_iGSvPnRg8pvnoWaV96pD0qkOsNoyBuZMZKzZwbBPoVdtkf8QV2suGCLls79FwX1C";
 const apiUrl = "https://api.thecatapi.com/v1";
+
 
 export function fetchBreeds() {
     return axios
@@ -14,7 +16,9 @@ export function fetchBreeds() {
         showError("Failed to fetch breeds.");
         throw err;
       });
+      
   }
+  
   
  
  export function fetchCatByBreed(breedId) {
@@ -25,4 +29,8 @@ export function fetchBreeds() {
         showError("Failed to fetch cat information.");
         throw err;
       });
+      
   }
+
+  
+   

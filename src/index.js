@@ -1,7 +1,9 @@
 
 import axios from 'axios';
 
-import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
+
+
+import { fetchBreeds, fetchCatByBreed, } from './cat-api.js';
 
 const breedSelect = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
@@ -31,6 +33,7 @@ function displayCatInfo(cat) {
     <p><strong>Temperament:</strong> ${cat[0].breeds[0].temperament}</p>
     </div>
   `;
+  
 }
 
 
@@ -46,6 +49,7 @@ fetchBreeds()
       option.textContent = breed.name;
       breedSelect.appendChild(option);
     });
+    
 
    
     breedSelect.addEventListener("change", () => {
@@ -59,12 +63,20 @@ fetchBreeds()
         .finally(() => {
           loader.style.display = "none";
         });
+       
     });
     new SlimSelect({
-        select: '.breed-select',
-      });
+      select: '.breed-select',
+      
+      
+    })
+    
+    
+    
   })
   .catch((err) => console.error(err));
+  
+  
   
 
 
